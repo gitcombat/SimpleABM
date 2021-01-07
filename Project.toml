@@ -1,0 +1,9 @@
+name = "SimpleABM"
+uuid = "82bdaaed-7e19-4e46-9c85-30b2c3ff701d"
+authors = ["Niclas Mattsson <niclas.mattsson@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+UnPack = "3a884ed6-31ef-47d7-9d2a-63182c4928ed"
