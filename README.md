@@ -8,6 +8,8 @@ This is a Julia port of a Python model originally written by [Jinxi Yang](https:
 Install and start Julia. Then type this (it may take a minute to build the registry the first time):
 
 ```
+julia> using Pkg
+
 julia> Pkg.add("https://github.com/niclasmattsson/SimpleABM")
 ```
 
@@ -31,8 +33,17 @@ julia> capac, invest = runmodel(70, hurdlerates=[0.04, 0.06, 0.08, 0.1], investc
 
 All parameters defined in `defaults = Dict(...)` at the beginning of `read_input_data()` can be changed in this way.
 
+# Benchmarking
 
+Julia's main claim to fame is its speed - the unofficial slogan is "easy as Python, fast as C". To get reliable measurements of execution time:
 
+```
+julia> Pkg.add("BenchmarkTools")
 
+julia> using BenchmarkTools
 
+julia> @btime runmodel(70);
+  141.570 ms (14310 allocations: 1.49 MiB)
+```
 
+For comparison, the Python model runs in 6.6 seconds on the same computer.
